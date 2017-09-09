@@ -11,30 +11,42 @@ import PureLayout
 import UIKit
 
 class AboutView: UIView {
-    var label : UILabel!
     var versionSubjectLabel : UILabel!
     var versionLabel : UILabel!
-    var aboutTextView: UITextView!
+    var aboutTextView : UITextView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let x : CGFloat = 0.0
-        let y : CGFloat = 0.0
-        let width : CGFloat = 200.0
-        let height : CGFloat = 50.0
 
-        self.versionLabel = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
-        self.versionLabel.text = "Versoin"
-        self.versionLabel.textColor = UIColor.white
+        self.versionSubjectLabel = UILabel.newAutoLayout()
+        self.versionSubjectLabel.text = "Versoin"
+        self.versionSubjectLabel.textColor = UIColor.black
+        self.versionSubjectLabel.layer.borderWidth  = 1
+        
+        self.versionLabel = UILabel.newAutoLayout()
+        self.versionLabel.text = "1.0.0"
+        self.versionLabel.textColor = UIColor.black
         self.versionLabel.layer.borderWidth  = 1
         
-        self.aboutTextView = UITextView()
+        self.aboutTextView = UITextView.newAutoLayout()
+        self.aboutTextView.text = "This is a Swift example app for practicing and learning Swift."
         
         
-        self.addSubview(self.versionLabel!)
+        self.addSubview(self.versionSubjectLabel)
+        self.addSubview(self.versionLabel)
+        self.addSubview(self.aboutTextView)
         
-        self.versionLabel.autoPinEdge(toSuperviewEdge: ALEdge.top, withInset: 70.0)
-        self.versionLabel.autoPinEdge(toSuperviewEdge: ALEdge.top, withInset: 30.0)
+        self.versionSubjectLabel.autoPinEdge(toSuperviewEdge: ALEdge.top, withInset: 70.0)
+        self.versionSubjectLabel.autoPinEdge(toSuperviewEdge: ALEdge.left, withInset: 30.0)
+        
+        self.versionLabel.autoAlignAxis(ALAxis.horizontal, toSameAxisOf: self.versionSubjectLabel)
+        self.versionLabel.autoPinEdge(toSuperviewEdge: ALEdge.right, withInset: 30.0)
+        self.versionLabel.autoMatch(ALDimension.width, to: ALDimension.width, of: self.versionSubjectLabel, withMultiplier: 1.5)
+        
+        self.aboutTextView.autoPinEdge(ALEdge.left, to: ALEdge.left, of: self.versionSubjectLabel)
+        self.aboutTextView.autoPinEdge(ALEdge.right, to: ALEdge.right, of: self.versionLabel)
+        self.aboutTextView.autoPinEdge(ALEdge.top, to: ALEdge.bottom, of: self.versionSubjectLabel, withOffset: 10.0)
+        self.aboutTextView.autoPinEdge(toSuperviewEdge: ALEdge.bottom)
         
     }
     
