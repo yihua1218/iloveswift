@@ -26,7 +26,7 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewWillAppear(animated)
         
         // Create Tab one
-        newsImage = UIImage.init(icon: .FATwitter, size: CGSize(width: 35, height: 35))
+        newsImage = UIImage.init(icon: .FANewspaperO, size: CGSize(width: 35, height: 35))
         let tabOne = NewsViewController()
         let tabOneBarItem = UITabBarItem(title: "News", image: newsImage, tag: 1)
         
@@ -34,7 +34,7 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         
         
         // Create Tab two
-        aboutImage = UIImage.init(icon: .FATwitter, size: CGSize(width: 35, height: 35))
+        aboutImage = UIImage.init(icon: .FABars, size: CGSize(width: 35, height: 35))
         let tabTwo = AboutViewController()
         let tabTwoBarItem2 = UITabBarItem(title: "About", image: aboutImage, tag: 2)
         

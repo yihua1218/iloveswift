@@ -8,4 +8,10 @@ target 'I Love Swift' do
   # Pods for I Love Swift
   pod 'PureLayout'
   pod 'Font-Awesome-Swift'
+  # For Facebook Login
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  # For Google Login
+  pod 'Firebase'
 end

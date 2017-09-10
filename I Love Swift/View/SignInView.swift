@@ -1,8 +1,8 @@
 //
-//  AboutView.swift
+//  SignInView.swift
 //  I Love Swift
 //
-//  Created by 梁益華 on 2017/9/8.
+//  Created by 梁益華 on 2017/9/10.
 //  Copyright © 2017年 Yi-Hua Liang. All rights reserved.
 //
 
@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 import PureLayout
 
-class AboutView: UIView {
+class SignInView: UIView {
     var versionSubjectLabel : UILabel!
     var versionLabel : UILabel!
     var aboutTextView : UITextView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         self.versionSubjectLabel = UILabel.newAutoLayout()
         self.versionSubjectLabel.text = "Versoin"
         self.versionSubjectLabel.textColor = UIColor.black
