@@ -7,4 +7,5 @@ target 'I Love Swift' do
 
   # Pods for I Love Swift
   pod 'PureLayout'
+  pod 'Font-Awesome-Swift'
 end
