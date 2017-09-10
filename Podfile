@@ -11,7 +11,7 @@ target 'I Love Swift' do
   # For Facebook Login
   pod 'FacebookCore'
   pod 'FacebookLogin'
-  pod 'FacebookShare'
+  # pod 'FacebookShare' # Compiling Fail.
   # For Google Login
   pod 'Firebase'
 end
