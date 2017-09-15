@@ -18,6 +18,11 @@ class NewsView: UIView {
         
         self.centerButton = UIButton.newAutoLayout()
         self.centerButton.setTitle("Center Button", for: UIControlState.normal);
+        self.centerButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        self.centerButton.backgroundColor = .clear
+        self.centerButton.layer.cornerRadius = 5
+        self.centerButton.layer.borderWidth = 1
+        self.centerButton.layer.borderColor = UIColor.black.cgColor
         
         self.addSubview(self.centerButton)
         
