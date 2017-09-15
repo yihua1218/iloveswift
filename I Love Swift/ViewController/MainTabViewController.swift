@@ -12,6 +12,7 @@ import Font_Awesome_Swift
 
 class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
     var newsImage : UIImage!
+    var tableImage : UIImage!
     var aboutImage : UIImage!
     
     override func viewDidLoad() {
@@ -34,14 +35,20 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         
         
         // Create Tab two
+        tableImage = UIImage.init(icon: .FATable, size: CGSize(width: 35, height: 35))
+        let tabTwo = ItemTableViewController()
+        let tabTwoBarItem = UITabBarItem(title: "Table", image: tableImage, tag: 2)
+        
+        tabTwo.tabBarItem = tabTwoBarItem
+        
+        // Create Tab third
         aboutImage = UIImage.init(icon: .FABars, size: CGSize(width: 35, height: 35))
-        let tabTwo = AboutViewController()
-        let tabTwoBarItem2 = UITabBarItem(title: "About", image: aboutImage, tag: 2)
+        let tabThird = AboutViewController()
+        let tabThirdBarItem = UITabBarItem(title: "About", image: aboutImage, tag: 3)
         
-        tabTwo.tabBarItem = tabTwoBarItem2
+        tabThird.tabBarItem = tabThirdBarItem
         
-        
-        self.viewControllers = [tabOne, tabTwo]
+        self.viewControllers = [tabOne, tabTwo, tabThird]
     }
     
     // UITabBarControllerDelegate method
