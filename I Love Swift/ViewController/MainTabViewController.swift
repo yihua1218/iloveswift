@@ -26,6 +26,57 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        var tabs = [String:[String: Any]]()
+        
+        tabs["News"] = [String: Any]()
+        tabs["News"]!["icon"] = FAType.FANewspaperO.rawValue
+        tabs["News"]!["size"] = CGSize(width: 35, height: 35)
+        tabs["News"]!["title"] = "News"
+        tabs["News"]!["vc"] = NewsViewController()
+        
+        tabs["Map"] = [String: Any]()
+        tabs["Map"]!["icon"] = FAType.FAMap.rawValue
+        tabs["Map"]!["size"] = CGSize(width: 35, height: 35)
+        tabs["Map"]!["title"] = "Map"
+        tabs["Map"]!["vc"] = MapViewController()
+        
+        tabs["Table"] = [String: Any]()
+        tabs["Table"]!["icon"] = FAType.FATable.rawValue
+        tabs["Table"]!["size"] = CGSize(width: 35, height: 35)
+        tabs["Table"]!["title"] = "Table"
+        tabs["Table"]!["vc"] = ItemTableViewController()
+        
+        tabs["About"] = [String: Any]()
+        tabs["About"]!["icon"] = FAType.FABars.rawValue
+        tabs["About"]!["size"] = CGSize(width: 35, height: 35)
+        tabs["About"]!["title"] = "About"
+        tabs["About"]!["vc"] = AboutViewController()
+        
+        var viewControllers = [UIViewController]()
+        var tag = 1
+        for (tab_id, tab_def) in tabs {
+            let vc = tabs[tab_id]!["vc"] as? UIViewController
+            let title = tab_def["title"]
+            print("\(tab_id) => \(title ?? 0)")
+            
+            
+            tabs[tab_id]!["image"] = UIImage.init(
+                icon: FAType(rawValue: tab_def["icon"] as! Int)!,
+                size: tab_def["size"] as! CGSize)
+            
+            tabs[tab_id]!["bar_item"] = UITabBarItem(
+                title: title as? String,
+                image: tabs[tab_id]!["image"] as? UIImage,
+                tag: tag)
+            vc?.tabBarItem = tabs[tab_id]!["bar_item"] as? UITabBarItem
+            print(vc)
+            viewControllers.append(vc!)
+            tag += 1
+        }
+        self.viewControllers = viewControllers
+        print(self.viewControllers)
+
+        /*
         // Create Tab one
         newsImage = UIImage.init(icon: .FANewspaperO, size: CGSize(width: 35, height: 35))
         let tabOne = NewsViewController()
@@ -48,7 +99,7 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         
         tabThird.tabBarItem = tabThirdBarItem
         
-        self.viewControllers = [tabOne, tabTwo, tabThird]
+        self.viewControllers = [tabOne, tabTwo, tabThird]*/
     }
     
     // UITabBarControllerDelegate method

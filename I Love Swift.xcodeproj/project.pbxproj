@@ -18,6 +18,8 @@
 		0F401AB11F650D6A00C38766 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB01F650D6A00C38766 /* AboutViewController.swift */; };
 		0F401AB31F650E2900C38766 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB21F650E2900C38766 /* NewsView.swift */; };
 		0F401AB71F65263200C38766 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB61F65263200C38766 /* SignInView.swift */; };
+		0F8613B11F6F3E8D0040BAEE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8613B01F6F3E8D0040BAEE /* MapView.swift */; };
+		0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8613B21F6F3ED40040BAEE /* MapViewController.swift */; };
 		0FDE30081F6BCC910067F598 /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30071F6BCC910067F598 /* ItemTableView.swift */; };
 		0FDE300A1F6BCCE20067F598 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30091F6BCCE20067F598 /* ItemTableViewController.swift */; };
 		1E8C08DE46872CC9362BB5CA /* Pods_I_Love_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDF63BBBCF9D65DCDFF79D /* Pods_I_Love_Swift.framework */; };
@@ -37,6 +39,8 @@
 		0F401AB01F650D6A00C38766 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0F401AB21F650E2900C38766 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		0F401AB61F65263200C38766 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = View/SignInView.swift; sourceTree = "<group>"; };
+		0F8613B01F6F3E8D0040BAEE /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = View/MapView.swift; sourceTree = "<group>"; };
+		0F8613B21F6F3ED40040BAEE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewController/MapViewController.swift; sourceTree = "<group>"; };
 		0FDE30071F6BCC910067F598 /* ItemTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
 		0FDE30091F6BCCE20067F598 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewController.swift; path = ViewController/ItemTableViewController.swift; sourceTree = "<group>"; };
 		10FDF63BBBCF9D65DCDFF79D /* Pods_I_Love_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_I_Love_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +81,6 @@
 		0F401A2D1F627ADA00C38766 /* I Love Swift */ = {
 			isa = PBXGroup;
 			children = (
-				0F401AAB1F650B4400C38766 /* TabViewController */,
 				0F401A8D1F62818700C38766 /* XIM */,
 				0F401A8C1F6280E900C38766 /* ViewController */,
 				0F401A8B1F6280E300C38766 /* View */,
@@ -97,6 +100,7 @@
 				0F401AB61F65263200C38766 /* SignInView.swift */,
 				0F401AB21F650E2900C38766 /* NewsView.swift */,
 				0FDE30071F6BCC910067F598 /* ItemTableView.swift */,
+				0F8613B01F6F3E8D0040BAEE /* MapView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -108,6 +112,7 @@
 				0FDE30091F6BCCE20067F598 /* ItemTableViewController.swift */,
 				0F401AAC1F650B8800C38766 /* MainTabViewController.swift */,
 				0F401AB01F650D6A00C38766 /* AboutViewController.swift */,
+				0F8613B21F6F3ED40040BAEE /* MapViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -118,13 +123,6 @@
 				0F401A8E1F6281A000C38766 /* XIM.swift */,
 			);
 			name = XIM;
-			sourceTree = "<group>";
-		};
-		0F401AAB1F650B4400C38766 /* TabViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TabViewController;
 			sourceTree = "<group>";
 		};
 		34FFFD99B1BEB80B567A2101 /* Frameworks */ = {
@@ -293,9 +291,11 @@
 				0FDE300A1F6BCCE20067F598 /* ItemTableViewController.swift in Sources */,
 				0F401A8F1F6281A000C38766 /* XIM.swift in Sources */,
 				0F401A881F6280AC00C38766 /* AboutView.swift in Sources */,
+				0F8613B11F6F3E8D0040BAEE /* MapView.swift in Sources */,
 				0F401AB31F650E2900C38766 /* NewsView.swift in Sources */,
 				0F401AAD1F650B8800C38766 /* MainTabViewController.swift in Sources */,
 				0FDE30081F6BCC910067F598 /* ItemTableView.swift in Sources */,
+				0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */,
 				0F401AAF1F650D5B00C38766 /* NewsViewController.swift in Sources */,
 				0F401AB11F650D6A00C38766 /* AboutViewController.swift in Sources */,
 				0F401AB71F65263200C38766 /* SignInView.swift in Sources */,
