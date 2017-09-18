@@ -69,12 +69,12 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
                 image: tabs[tab_id]!["image"] as? UIImage,
                 tag: tag)
             vc?.tabBarItem = tabs[tab_id]!["bar_item"] as? UITabBarItem
-            print(vc)
+            print(vc!)
             viewControllers.append(vc!)
             tag += 1
         }
         self.viewControllers = viewControllers
-        print(self.viewControllers)
+        print(self.viewControllers!)
 
         /*
         // Create Tab one
