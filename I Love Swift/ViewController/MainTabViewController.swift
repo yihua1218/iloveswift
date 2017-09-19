@@ -87,6 +87,7 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
             }
         }
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.viewControllers = result
         print(self.viewControllers!)
     }

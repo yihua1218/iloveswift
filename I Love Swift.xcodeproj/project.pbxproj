@@ -96,11 +96,11 @@
 		0F401A8B1F6280E300C38766 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0F401A871F6280AC00C38766 /* AboutView.swift */,
 				0F401AB61F65263200C38766 /* SignInView.swift */,
 				0F401AB21F650E2900C38766 /* NewsView.swift */,
 				0FDE30071F6BCC910067F598 /* ItemTableView.swift */,
 				0F8613B01F6F3E8D0040BAEE /* MapView.swift */,
+				0F401A871F6280AC00C38766 /* AboutView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,8 +111,8 @@
 				0F401AAE1F650D5B00C38766 /* NewsViewController.swift */,
 				0FDE30091F6BCCE20067F598 /* ItemTableViewController.swift */,
 				0F401AAC1F650B8800C38766 /* MainTabViewController.swift */,
-				0F401AB01F650D6A00C38766 /* AboutViewController.swift */,
 				0F8613B21F6F3ED40040BAEE /* MapViewController.swift */,
+				0F401AB01F650D6A00C38766 /* AboutViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
