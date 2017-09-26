@@ -32,7 +32,7 @@ class NewsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func clickedButton(sender: AnyObject) {
+    @objc func clickedButton(sender: AnyObject) {
         print("centerButton clicked")
         self.navigationController?.pushViewController(
             ItemTableViewController(), animated: true)

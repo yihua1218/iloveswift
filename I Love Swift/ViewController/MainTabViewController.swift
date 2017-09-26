@@ -46,7 +46,13 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         tabs["Table"]!["icon"] = FAType.FATable.rawValue
         tabs["Table"]!["size"] = CGSize(width: 35, height: 35)
         tabs["Table"]!["title"] = "Table"
-        tabs["Table"]!["vc"] = ItemTableViewController()
+        
+        let itemTableViewController = ItemTableViewController()
+        let navigationBarView = NavigationBarView(leftFA: FAType.FAArrowLeft.rawValue, title: "Table View", rightFA: FAType.FAWindowClose.rawValue)
+        let navigationController = UINavigationController.init(rootViewController: itemTableViewController)
+        navigationController.view.addSubview(navigationBarView)
+        tabs["Table"]!["vc"] = navigationController
+        
         tabs["Table"]!["tag"] = 3
         
         tabs["About"] = [String: Any]()

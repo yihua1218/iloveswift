@@ -18,6 +18,7 @@
 		0F401AB11F650D6A00C38766 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB01F650D6A00C38766 /* AboutViewController.swift */; };
 		0F401AB31F650E2900C38766 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB21F650E2900C38766 /* NewsView.swift */; };
 		0F401AB71F65263200C38766 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB61F65263200C38766 /* SignInView.swift */; };
+		0F8588D11F74F08100788A3E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8588D01F74F08100788A3E /* NavigationBarView.swift */; };
 		0F8613B11F6F3E8D0040BAEE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8613B01F6F3E8D0040BAEE /* MapView.swift */; };
 		0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8613B21F6F3ED40040BAEE /* MapViewController.swift */; };
 		0FDE30081F6BCC910067F598 /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE30071F6BCC910067F598 /* ItemTableView.swift */; };
@@ -39,6 +40,7 @@
 		0F401AB01F650D6A00C38766 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0F401AB21F650E2900C38766 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		0F401AB61F65263200C38766 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = View/SignInView.swift; sourceTree = "<group>"; };
+		0F8588D01F74F08100788A3E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBarView.swift; path = View/NavigationBarView.swift; sourceTree = "<group>"; };
 		0F8613B01F6F3E8D0040BAEE /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = View/MapView.swift; sourceTree = "<group>"; };
 		0F8613B21F6F3ED40040BAEE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewController/MapViewController.swift; sourceTree = "<group>"; };
 		0FDE30071F6BCC910067F598 /* ItemTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		0F401A2D1F627ADA00C38766 /* I Love Swift */ = {
 			isa = PBXGroup;
 			children = (
+				0FB4DE701F75079700F816AC /* Delegate */,
 				0F401A8D1F62818700C38766 /* XIM */,
 				0F401A8C1F6280E900C38766 /* ViewController */,
 				0F401A8B1F6280E300C38766 /* View */,
@@ -97,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0F401AB61F65263200C38766 /* SignInView.swift */,
+				0F8588D01F74F08100788A3E /* NavigationBarView.swift */,
 				0F401AB21F650E2900C38766 /* NewsView.swift */,
 				0FDE30071F6BCC910067F598 /* ItemTableView.swift */,
 				0F8613B01F6F3E8D0040BAEE /* MapView.swift */,
@@ -123,6 +127,13 @@
 				0F401A8E1F6281A000C38766 /* XIM.swift */,
 			);
 			name = XIM;
+			sourceTree = "<group>";
+		};
+		0FB4DE701F75079700F816AC /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 		34FFFD99B1BEB80B567A2101 /* Frameworks */ = {
@@ -172,13 +183,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Yi-Hua Liang";
 				TargetAttributes = {
 					0F401A2A1F627ADA00C38766 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FC396XDZVW;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -294,6 +311,7 @@
 				0F8613B11F6F3E8D0040BAEE /* MapView.swift in Sources */,
 				0F401AB31F650E2900C38766 /* NewsView.swift in Sources */,
 				0F401AAD1F650B8800C38766 /* MainTabViewController.swift in Sources */,
+				0F8588D11F74F08100788A3E /* NavigationBarView.swift in Sources */,
 				0FDE30081F6BCC910067F598 /* ItemTableView.swift in Sources */,
 				0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */,
 				0F401AAF1F650D5B00C38766 /* NewsViewController.swift in Sources */,
@@ -335,7 +353,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -343,7 +363,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -386,7 +410,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -394,7 +420,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -425,12 +455,15 @@
 			baseConfigurationReference = DF8ADBCE6B3FCD2BA1CA4FBD /* Pods-I Love Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FC396XDZVW;
 				INFOPLIST_FILE = "I Love Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.hoebus.iloveswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -439,12 +472,14 @@
 			baseConfigurationReference = 6E5351227723B174C89BF7AB /* Pods-I Love Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FC396XDZVW;
 				INFOPLIST_FILE = "I Love Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.hoebus.iloveswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

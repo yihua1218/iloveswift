@@ -14,7 +14,8 @@ class AboutView: UIView {
     var versionSubjectLabel : UILabel!
     var versionLabel : UILabel!
     var aboutTextView : UITextView!
-    
+    var goButton : UIButton!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -31,10 +32,15 @@ class AboutView: UIView {
         self.aboutTextView = UITextView.newAutoLayout()
         self.aboutTextView.text = "This is a Swift example app for practicing and learning Swift."
         
+        self.goButton = UIButton.newAutoLayout()
+        self.goButton.setTitle("Click Me", for: UIControlState.normal)
+        self.goButton.addTarget(self, action: #selector(AboutView.buttonAction(_:)), for: .touchUpInside)
+        //self.goButton.add
         
         self.addSubview(self.versionSubjectLabel)
         self.addSubview(self.versionLabel)
         self.addSubview(self.aboutTextView)
+        self.addSubview(self.goButton)
         
         self.versionSubjectLabel.autoPinEdge(toSuperviewEdge: ALEdge.top, withInset: 70.0)
         self.versionSubjectLabel.autoPinEdge(toSuperviewEdge: ALEdge.left, withInset: 30.0)
@@ -48,6 +54,13 @@ class AboutView: UIView {
         self.aboutTextView.autoPinEdge(ALEdge.top, to: ALEdge.bottom, of: self.versionSubjectLabel, withOffset: 10.0)
         self.aboutTextView.autoPinEdge(toSuperviewEdge: ALEdge.bottom)
         
+        self.goButton.autoPinEdge(toSuperviewEdge: ALEdge.top, withInset: 70.0)
+        self.goButton.autoPinEdge(toSuperviewEdge: ALEdge.left, withInset: 30.0)
+        
+    }
+    
+    @objc func buttonAction(_ sender:UIButton!) {
+        print("Button tapped")
     }
     
     required init?(coder: NSCoder) {
