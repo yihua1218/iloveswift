@@ -12,21 +12,31 @@ import UIKit
 
 class NewsView: UIView {
     var centerButton : UIButton!
+    var textView : UITextView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.centerButton = UIButton.newAutoLayout()
-        self.centerButton.setTitle("Center Button", for: UIControlState.normal);
-        self.centerButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        self.centerButton.backgroundColor = .clear
-        self.centerButton.layer.cornerRadius = 5
-        self.centerButton.layer.borderWidth = 1
-        self.centerButton.layer.borderColor = UIColor.black.cgColor
+        centerButton = UIButton.newAutoLayout()
+        centerButton.setTitle("Center Button", for: UIControlState.normal);
+        centerButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        centerButton.backgroundColor = .clear
+        centerButton.layer.cornerRadius = 5
+        centerButton.layer.borderWidth = 1
+        centerButton.layer.borderColor = UIColor.black.cgColor
         
-        self.addSubview(self.centerButton)
+        addSubview(centerButton)
         
-        self.centerButton.autoCenterInSuperview()
+        centerButton.autoCenterInSuperview()
+        
+        textView = UITextView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
+        textView.text = "隨便輸入幾行文字！"
+        let fullScreenSize = UIScreen.main.bounds.size
+        textView.center = CGPoint(
+            x: fullScreenSize.width * 0.5,
+            y: fullScreenSize.height * 0.3)
+        
+        addSubview(textView)        
     }
     
     required init?(coder: NSCoder) {

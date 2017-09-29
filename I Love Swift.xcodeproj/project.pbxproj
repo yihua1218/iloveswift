@@ -18,6 +18,7 @@
 		0F401AB11F650D6A00C38766 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB01F650D6A00C38766 /* AboutViewController.swift */; };
 		0F401AB31F650E2900C38766 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB21F650E2900C38766 /* NewsView.swift */; };
 		0F401AB71F65263200C38766 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401AB61F65263200C38766 /* SignInView.swift */; };
+		0F614E581F7E39430015B5A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F614E571F7E39430015B5A6 /* SettingsView.swift */; };
 		0F8588D11F74F08100788A3E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8588D01F74F08100788A3E /* NavigationBarView.swift */; };
 		0F8613B11F6F3E8D0040BAEE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8613B01F6F3E8D0040BAEE /* MapView.swift */; };
 		0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8613B21F6F3ED40040BAEE /* MapViewController.swift */; };
@@ -40,6 +41,7 @@
 		0F401AB01F650D6A00C38766 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0F401AB21F650E2900C38766 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		0F401AB61F65263200C38766 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = View/SignInView.swift; sourceTree = "<group>"; };
+		0F614E571F7E39430015B5A6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = View/SettingsView.swift; sourceTree = "<group>"; };
 		0F8588D01F74F08100788A3E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBarView.swift; path = View/NavigationBarView.swift; sourceTree = "<group>"; };
 		0F8613B01F6F3E8D0040BAEE /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = View/MapView.swift; sourceTree = "<group>"; };
 		0F8613B21F6F3ED40040BAEE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewController/MapViewController.swift; sourceTree = "<group>"; };
@@ -99,12 +101,13 @@
 		0F401A8B1F6280E300C38766 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F401AB21F650E2900C38766 /* NewsView.swift */,
 				0F401AB61F65263200C38766 /* SignInView.swift */,
 				0F8588D01F74F08100788A3E /* NavigationBarView.swift */,
-				0F401AB21F650E2900C38766 /* NewsView.swift */,
 				0FDE30071F6BCC910067F598 /* ItemTableView.swift */,
 				0F8613B01F6F3E8D0040BAEE /* MapView.swift */,
 				0F401A871F6280AC00C38766 /* AboutView.swift */,
+				0F614E571F7E39430015B5A6 /* SettingsView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -188,7 +191,7 @@
 				TargetAttributes = {
 					0F401A2A1F627ADA00C38766 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = FC396XDZVW;
+						DevelopmentTeam = XWVVBNA9PR;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -312,6 +315,7 @@
 				0F401AB31F650E2900C38766 /* NewsView.swift in Sources */,
 				0F401AAD1F650B8800C38766 /* MainTabViewController.swift in Sources */,
 				0F8588D11F74F08100788A3E /* NavigationBarView.swift in Sources */,
+				0F614E581F7E39430015B5A6 /* SettingsView.swift in Sources */,
 				0FDE30081F6BCC910067F598 /* ItemTableView.swift in Sources */,
 				0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */,
 				0F401AAF1F650D5B00C38766 /* NewsViewController.swift in Sources */,
@@ -456,10 +460,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = FC396XDZVW;
+				DEVELOPMENT_TEAM = XWVVBNA9PR;
 				INFOPLIST_FILE = "I Love Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.hoebus.iloveswift;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.hoebus.iloveswift2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -473,10 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = FC396XDZVW;
+				DEVELOPMENT_TEAM = XWVVBNA9PR;
 				INFOPLIST_FILE = "I Love Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.hoebus.iloveswift;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.idv.hoebus.iloveswift2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

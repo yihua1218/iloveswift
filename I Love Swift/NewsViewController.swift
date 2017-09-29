@@ -10,15 +10,14 @@ import Foundation
 import UIKit
 
 class NewsViewController: UIViewController {
+    let newsView : NewsView = NewsView()
 
     override func loadView() {
         super.loadView()
         // Do any additional setup after loading the view, typically from a nib.
-        let newsView : NewsView = NewsView()
-        
         newsView.centerButton.addTarget(self, action: #selector(clickedButton(sender:)), for: UIControlEvents.touchUpInside)
         
-        self.view = newsView
+        view = newsView
     }
 
     override func viewDidLoad() {
@@ -34,7 +33,10 @@ class NewsViewController: UIViewController {
     
     @objc func clickedButton(sender: AnyObject) {
         print("centerButton clicked")
-        self.navigationController?.pushViewController(
-            ItemTableViewController(), animated: true)
+        let itemTableViewController = ItemTableViewController()
+        itemTableViewController.text = newsView.textView.text
+        itemTableViewController.fruits[0] = newsView.textView.text
+        navigationController?.pushViewController(
+            itemTableViewController, animated: true)
     }
 }
