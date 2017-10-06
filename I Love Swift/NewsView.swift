@@ -12,6 +12,7 @@ import UIKit
 
 class NewsView: UIView {
     var centerButton : UIButton!
+    var notificationButton : UIButton!
     var textView : UITextView!
     
     override init(frame: CGRect) {
@@ -28,6 +29,19 @@ class NewsView: UIView {
         addSubview(centerButton)
         
         centerButton.autoCenterInSuperview()
+        
+        notificationButton = UIButton.newAutoLayout()
+        notificationButton.setTitle("Send Notification", for: UIControlState.normal);
+        notificationButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        notificationButton.backgroundColor = .clear
+        notificationButton.layer.cornerRadius = 5
+        notificationButton.layer.borderWidth = 1
+        notificationButton.layer.borderColor = UIColor.black.cgColor
+        
+        addSubview(notificationButton)
+        
+        notificationButton.autoAlignAxis(ALAxis.vertical, toSameAxisOf: centerButton, withOffset: 0.0)
+        notificationButton.autoPinEdge(ALEdge.top, to: ALEdge.bottom, of: centerButton, withOffset: 5.0)
         
         textView = UITextView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
         textView.text = "隨便輸入幾行文字！"

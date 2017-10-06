@@ -9,10 +9,14 @@
 import Foundation
 import UIKit
 import MapKit
+import PureLayout
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var mapView: MKMapView!
     var locationManager: CLLocationManager!
+    var notificationLabel: UILabel!
+    var notificationButton : UIButton!
+    let notificationKey = "tw.idv.hoebus.swift"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification), name: NSNotification.Name(rawValue: notificationKey), object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +52,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         view.addSubview(mapView)
         mapView.autoPinEdgesToSuperviewEdges()
+        
+        notificationLabel = UILabel.newAutoLayout()
+        notificationLabel.text = "等待通知"
+        
+        view.addSubview(notificationLabel)
+        
+        notificationLabel.autoCenterInSuperview()
+        
+        notificationButton = UIButton.newAutoLayout()
+        notificationButton.setTitle("Send Notification", for: UIControlState.normal);
+        notificationButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        notificationButton.backgroundColor = .clear
+        notificationButton.layer.cornerRadius = 5
+        notificationButton.layer.borderWidth = 1
+        notificationButton.layer.borderColor = UIColor.black.cgColor
+        
+        view.addSubview(notificationButton)
+        
+        notificationButton.autoAlignAxis(ALAxis.vertical, toSameAxisOf: notificationLabel, withOffset: 0.0)
+        notificationButton.autoPinEdge(ALEdge.top, to: ALEdge.bottom, of: notificationLabel, withOffset: 5.0)
+        notificationButton.addTarget(self, action: #selector(sendNotificatonButton(sender:)), for: UIControlEvents.touchUpInside)
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -55,5 +82,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    @objc func sendNotificatonButton(sender: AnyObject) {
+        print("sendNotificatoinButton clicked")
+        NotificationCenter.default.post(name: Notification.Name(rawValue: notificationKey), object: self)
+    }
+    
+    @objc func receivedNotification() {
+        notificationLabel.text = "收到通知"
     }
 }

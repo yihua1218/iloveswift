@@ -11,11 +11,14 @@ import UIKit
 
 class NewsViewController: UIViewController {
     let newsView : NewsView = NewsView()
+    let notificationKey = "tw.idv.hoebus.swift"
+        
 
     override func loadView() {
         super.loadView()
         // Do any additional setup after loading the view, typically from a nib.
         newsView.centerButton.addTarget(self, action: #selector(clickedButton(sender:)), for: UIControlEvents.touchUpInside)
+        newsView.notificationButton.addTarget(self, action: #selector(sendNotificatonButton(sender:)), for: UIControlEvents.touchUpInside)
         
         view = newsView
     }
@@ -24,6 +27,7 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // self.view.center
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification), name: NSNotification.Name(rawValue: notificationKey), object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,5 +42,14 @@ class NewsViewController: UIViewController {
         itemTableViewController.fruits[0] = newsView.textView.text
         navigationController?.pushViewController(
             itemTableViewController, animated: true)
+    }
+    
+    @objc func sendNotificatonButton(sender: AnyObject) {
+        print("sendNotificatoinButton clicked")
+        NotificationCenter.default.post(name: Notification.Name(rawValue: notificationKey), object: self)
+    }
+    
+    @objc func receivedNotification() {
+        newsView.textView.text = "收到通知"
     }
 }
