@@ -46,21 +46,30 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         tabs["Table"]!["icon"] = FAType.FATable.rawValue
         tabs["Table"]!["size"] = CGSize(width: 35, height: 35)
         tabs["Table"]!["title"] = "Table"
-        
         let itemTableViewController = ItemTableViewController()
         let navigationBarView = NavigationBarView(leftFA: FAType.FAArrowLeft.rawValue, title: "Table View", rightFA: FAType.FAWindowClose.rawValue)
         let navigationController = UINavigationController.init(rootViewController: itemTableViewController)
         navigationController.view.addSubview(navigationBarView)
         tabs["Table"]!["vc"] = navigationController
-        
         tabs["Table"]!["tag"] = 3
+        
+        tabs["Bluetooth"] = [String: Any]()
+        tabs["Bluetooth"]!["icon"] = FAType.FABluetooth.rawValue
+        tabs["Bluetooth"]!["size"] = CGSize(width: 35, height: 35)
+        tabs["Bluetooth"]!["title"] = "Bluetooth"
+        let bleTableViewController = BleTableViewController()
+        let bleNavigationBarView = BleNavigationBarView(leftFA: FAType.FAArrowLeft.rawValue, title: "Bluetooth", rightFA: FAType.FAWindowClose.rawValue)
+        let bleNavigationController = UINavigationController.init(rootViewController: bleTableViewController)
+        bleNavigationController.view.addSubview(bleNavigationBarView)
+        tabs["Bluetooth"]!["vc"] = bleNavigationController
+        tabs["Bluetooth"]!["tag"] = 4
         
         tabs["About"] = [String: Any]()
         tabs["About"]!["icon"] = FAType.FABars.rawValue
         tabs["About"]!["size"] = CGSize(width: 35, height: 35)
         tabs["About"]!["title"] = "About"
         tabs["About"]!["vc"] = AboutViewController()
-        tabs["About"]!["tag"] = 4
+        tabs["About"]!["tag"] = 5
         
         var viewControllers = [UIViewController]()
         for (tab_id, tab_def) in tabs {

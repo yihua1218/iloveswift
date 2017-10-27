@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F23D3EC1FA32EFB002EFF0D /* BleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23D3EB1FA32EFB002EFF0D /* BleTableView.swift */; };
+		0F23D3EE1FA32FBE002EFF0D /* BleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23D3ED1FA32FBE002EFF0D /* BleTableViewController.swift */; };
+		0F23D3F01FA33107002EFF0D /* BleNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23D3EF1FA33107002EFF0D /* BleNavigationBarView.swift */; };
 		0F401A2F1F627ADA00C38766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F401A2E1F627ADA00C38766 /* AppDelegate.swift */; };
 		0F401A341F627ADA00C38766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F401A321F627ADA00C38766 /* Main.storyboard */; };
 		0F401A361F627ADA00C38766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F401A351F627ADA00C38766 /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F23D3EB1FA32EFB002EFF0D /* BleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleTableView.swift; sourceTree = "<group>"; };
+		0F23D3ED1FA32FBE002EFF0D /* BleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleTableViewController.swift; path = ViewController/BleTableViewController.swift; sourceTree = "<group>"; };
+		0F23D3EF1FA33107002EFF0D /* BleNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BleNavigationBarView.swift; path = View/BleNavigationBarView.swift; sourceTree = "<group>"; };
 		0F401A2B1F627ADA00C38766 /* I Love Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I Love Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F401A2E1F627ADA00C38766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F401A331F627ADA00C38766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +110,9 @@
 				0F401AB21F650E2900C38766 /* NewsView.swift */,
 				0F401AB61F65263200C38766 /* SignInView.swift */,
 				0F8588D01F74F08100788A3E /* NavigationBarView.swift */,
+				0F23D3EF1FA33107002EFF0D /* BleNavigationBarView.swift */,
 				0FDE30071F6BCC910067F598 /* ItemTableView.swift */,
+				0F23D3EB1FA32EFB002EFF0D /* BleTableView.swift */,
 				0F8613B01F6F3E8D0040BAEE /* MapView.swift */,
 				0F401A871F6280AC00C38766 /* AboutView.swift */,
 				0F614E571F7E39430015B5A6 /* SettingsView.swift */,
@@ -115,9 +123,10 @@
 		0F401A8C1F6280E900C38766 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0F401AAC1F650B8800C38766 /* MainTabViewController.swift */,
 				0F401AAE1F650D5B00C38766 /* NewsViewController.swift */,
 				0FDE30091F6BCCE20067F598 /* ItemTableViewController.swift */,
-				0F401AAC1F650B8800C38766 /* MainTabViewController.swift */,
+				0F23D3ED1FA32FBE002EFF0D /* BleTableViewController.swift */,
 				0F8613B21F6F3ED40040BAEE /* MapViewController.swift */,
 				0F401AB01F650D6A00C38766 /* AboutViewController.swift */,
 			);
@@ -309,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FDE300A1F6BCCE20067F598 /* ItemTableViewController.swift in Sources */,
+				0F23D3F01FA33107002EFF0D /* BleNavigationBarView.swift in Sources */,
+				0F23D3EE1FA32FBE002EFF0D /* BleTableViewController.swift in Sources */,
 				0F401A8F1F6281A000C38766 /* XIM.swift in Sources */,
 				0F401A881F6280AC00C38766 /* AboutView.swift in Sources */,
 				0F8613B11F6F3E8D0040BAEE /* MapView.swift in Sources */,
@@ -318,6 +329,7 @@
 				0F614E581F7E39430015B5A6 /* SettingsView.swift in Sources */,
 				0FDE30081F6BCC910067F598 /* ItemTableView.swift in Sources */,
 				0F8613B31F6F3ED40040BAEE /* MapViewController.swift in Sources */,
+				0F23D3EC1FA32EFB002EFF0D /* BleTableView.swift in Sources */,
 				0F401AAF1F650D5B00C38766 /* NewsViewController.swift in Sources */,
 				0F401AB11F650D6A00C38766 /* AboutViewController.swift in Sources */,
 				0F401AB71F65263200C38766 /* SignInView.swift in Sources */,
