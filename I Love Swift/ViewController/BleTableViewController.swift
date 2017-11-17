@@ -17,6 +17,7 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
     var timer : Timer!
     
     var fruits = ["Scan"]
+    var peripherals = [CBPeripheral]()
     
     var text = "只有一行"
     
@@ -55,22 +56,34 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0) {
-            print("0")
+            print("scan cell")
             onClickNavBarRightButton();
             // self.navigationController?.popViewController(animated: true)
         } else {
-            let itemTableViewController = ItemTableViewController()
-            itemTableViewController.fruits = []
-            for index in 1...(indexPath.row+10) {
-                itemTableViewController.fruits.append("Item \(index)")
-            }
-            itemTableViewController.tableView.reloadData()
-            
-            print("itemTableViewController.fruits:")
-            print(itemTableViewController.fruits)
-            
-            self.navigationController?.pushViewController(
-                itemTableViewController, animated: true)
+            // 7BE9
+            print("Connect:", peripherals[indexPath.row-1].name ?? "Unknow")
+            centralManager.connect(peripherals[indexPath.row-1], options: nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("didConnect:", peripheral.name ?? "Unknow");
+        // https://www.bluetooth.com/specifications/gatt/services
+        print("peripheral:", peripheral.identifier)
+        peripheral.discoverServices(nil)
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print("didDiscoverServices:", peripheral.name ?? "Unknow");
+        for service:CBService in peripheral.services as [CBService]! {
+            print("service.uuid:", service.uuid)
+            peripheral.discoverCharacteristics(nil, for: service)
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        for characteristic in service.characteristics! {
+            print("characteristic for", service.uuid, ":", characteristic.uuid)
         }
     }
     
@@ -88,8 +101,10 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if (( advertisementData["kCBAdvDataLocalName"]) != nil) {
+            peripheral.delegate = self
             print("didDiscover: %@", advertisementData)
             fruits.append(advertisementData["kCBAdvDataLocalName"] as! String)
+            peripherals.append(peripheral)
             // tableView.reloadData()
         }
         
@@ -110,6 +125,8 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
     
     @objc func onClickNavBarRightButton() {
         print("Scanning...")
+        fruits = ["Scan"]
+        peripherals.removeAll()
         centralManager.scanForPeripherals(withServices: nil, options: nil)
         timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(stopScan), userInfo: nil, repeats: false)
         centralManager.scanForPeripherals(withServices: nil, options: nil)
