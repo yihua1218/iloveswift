@@ -60,7 +60,7 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
             onClickNavBarRightButton();
             // self.navigationController?.popViewController(animated: true)
         } else {
-            // 7BE9
+            // tracMo Wallet: 0198467BE9
             print("Connect:", peripherals[indexPath.row-1].name ?? "Unknow")
             centralManager.connect(peripherals[indexPath.row-1], options: nil)
         }
@@ -82,11 +82,23 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        peripheral.delegate = self
         for characteristic in service.characteristics! {
             print("characteristic for", service.uuid, ":", characteristic.uuid)
+            peripheral.readValue(for: characteristic)
         }
     }
     
+    func peripheral(_ peripheral: CBPeripheral,
+                    didUpdateValueFor characteristic: CBCharacteristic,
+                    error: Error?) {
+        print(characteristic.uuid, ":", characteristic.value ?? "null")
+        let data = characteristic.value
+        if (data != nil) {
+            let dataString = String(data: data!, encoding: String.Encoding.utf8)
+            print(characteristic.uuid, ":", dataString ?? "nil")
+        }
+    }
     func onClickNavBarLeftButton() {
         print("click left button");
     }
