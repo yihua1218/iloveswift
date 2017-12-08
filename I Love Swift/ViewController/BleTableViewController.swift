@@ -183,6 +183,12 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
         } */
     }
     
+    func peripheral(_ peripheral: CBPeripheral,
+                    didWriteValueFor characteristic: CBCharacteristic,
+                    error: Error?) {
+        print("didWriteValueFor:", characteristic.value)
+    }
+    
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         centralManager.scanForPeripherals(withServices: nil, options: nil)
@@ -229,13 +235,13 @@ class BleTableViewController: UITableViewController, BleNavBarViewDelegate, CBCe
     @objc func onClickRingCell() {
         print("Click Ring")
         let data = Data(hexString: "3003068403")
-        myTracMo.writeValue(data!, for: tracMoCmd, type: CBCharacteristicWriteType.withoutResponse)
+        myTracMo.writeValue(data!, for: tracMoCmd, type: CBCharacteristicWriteType.withResponse)
     }
 
     @objc func onClickStopRingCell() {
         print("Click Stop Ring")
         let data = Data(hexString: "3004")
-        myTracMo.writeValue(data!, for: tracMoCmd, type: CBCharacteristicWriteType.withoutResponse)
+        myTracMo.writeValue(data!, for: tracMoCmd, type: CBCharacteristicWriteType.withResponse)
     }
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
